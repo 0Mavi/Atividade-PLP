@@ -2,27 +2,27 @@ package service;
 
 import util.Motor;
 
-public class Carro {
+public class Carro2 {
 
     public String marca;
     public String modelo;
     public int ano;
     public int velocidade;
-  
+    public Motor motor;
 
-    public Carro(String marca, String modelo, int ano) {
+    public Carro2(String marca, String modelo, int ano,Motor motor) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.velocidade = 0;
-        
+        this.motor = motor;
     }
 
     public void exibirDetalhes() {
         System.out.println("Marca: " + marca);
         System.out.println("Modelo: " + modelo);
         System.out.println("Ano: " + ano);
-   
+        motor.exibirDetalhesMotor();
         System.out.println(" ");
     }
 
