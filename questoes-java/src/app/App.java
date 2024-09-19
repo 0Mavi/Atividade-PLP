@@ -16,7 +16,7 @@ public class App {
 
         //questoes.questao5();
 
-        questoes.questao6();
+        // questoes.questao6();
 
         //questoes.questao7();
 

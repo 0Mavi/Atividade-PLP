@@ -3,12 +3,9 @@ package ui;
 import java.util.ArrayList;
 import java.util.List;
 
-import service.Carro;
-import service.Carro2;
-import service.ContaBancaria;
-import service.Som;
-import util.Animal;
-import util.Motor;
+import service.*;
+import util.*;
+
 
 public class Ui {
 
@@ -89,5 +86,59 @@ public class Ui {
         carro1.exibirDetalhes();
 
         carro1.exibirDetalhes();
+    }
+
+    public void questao7(){
+        Escola escola1 = new Escola("Escola Raio de sol");
+        Escola escola2 = new Escola("Escola Sesi");
+
+        Professor professor1 = new Professor("Professor Lucas");
+        Professor professor2 = new Professor("Professor Eduardo");
+
+        escola1.adicionarProfessor(professor1);
+        escola1.adicionarProfessor(professor2);
+
+        escola2.adicionarProfessor(professor1);
+
+        escola1.listarProfessores();
+        escola2.listarProfessores();
+
+        professor1.listarEscolas();
+        professor2.listarEscolas();
+    }
+
+    public void questao8(){
+        Empresa empresa = new Empresa("Arcturos Tech");
+
+        Empregado empregado1 = new Empregado("Gabriel", "Desenvolvedor", 5000.00);
+        Empregado empregado2 = new Empregado("Fabricio", "Analista de Sistemas", 4500.00);
+        Empregado empregado3 = new Empregado("Vitoria", "Design", 7000.00);
+
+        empresa.adicionarEmpregado(empregado1);
+        empresa.adicionarEmpregado(empregado2);
+        empresa.adicionarEmpregado(empregado3);
+
+        empresa.listarEmpregados();
+    }
+
+    public void questao9(){
+
+        Impressora relatorio = new Relatorio();
+        Impressora contrato = new Contrato();
+
+        relatorio.imprimir();
+        contrato.imprimir();
+    }
+
+    public void questao10(){
+        Calculadora calc = new Calculadora();
+
+        System.out.println(calc.somar(20,30));
+        System.out.println(calc.somar(20,60,20));
+
+    }
+
+    public void questao11(){
+        
     }
 }
