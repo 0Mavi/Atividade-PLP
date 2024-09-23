@@ -29,7 +29,7 @@ public class Ui {
         carro1.exibirVelocidade();
     }
 
-    public void questao3() {
+    public void questao3() throws SaldoException {
         ContaBancaria conta = new ContaBancaria(500, "Mauro Gabirel");
 
         System.out.println("Titular: " + conta.getTitular());
@@ -139,6 +139,57 @@ public class Ui {
     }
 
     public void questao11(){
+        FuncionarioHorista horista = new FuncionarioHorista("Maria", 35.0, 190);
+        System.out.println("Funcionário Horista: " + horista.getNome() + ", Salário: R$ " + horista.calcularSalario());
+
+        // Criando um funcionário assalariado
+        FuncionarioAssalariado assalariado = new FuncionarioAssalariado("Julia", 4000.0);
+        System.out.println("Funcionário Assalariado: " + assalariado.getNome() + ", Salário: R$ " + assalariado.calcularSalario());
+    }
+
+    public void questao12(){
+        Produto produto1 = new Produto("Cafe", 12.9);
+        Produto produto2 = new Produto("Açucar", 10.9);
+
+        double soma = produto1.somarPrecos(produto2);
+        System.out.println("A soma dos preços: R$ " + soma);
+    }
+
+    public void questao13(){
+        int numero = 5;
+        int fatorial = Matematica.fatorial(numero);
+        System.out.println("Fatorial de " + numero + " é: " + fatorial);
+    }
+
+    public void questao14(){
+        Configuracao config1 = Configuracao.getInstancia();
+        config1.mostrarConfiguracoes();
         
+        config1.setNomeDoSistema("Novo Sistema");
+        config1.setVersao("2.0");
+
+        Configuracao config2 = Configuracao.getInstancia();
+        config2.mostrarConfiguracoes();
+
+        System.out.println("Sistema alterado com sucesso? " + (config1 == config2));  
+    }
+
+    public void questao15(){
+        ContaBancaria conta = new ContaBancaria(500.0, "João");
+
+        // Tentativa de saque válido
+        try {
+            conta.sacar(100.0);
+            System.out.println("Saldo após saque: R$ " + conta.getSaldo());
+        } catch (SaldoException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Tentativa de saque com saldo insuficiente
+        try {
+            conta.sacar(600.0); // Saque superior ao saldo disponível
+        } catch (SaldoException e) {
+            System.out.println(e.getMessage()); // Exibe a mensagem da exceção
+        }
     }
 }

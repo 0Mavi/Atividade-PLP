@@ -1,5 +1,7 @@
 package service;
 
+import util.SaldoException;
+
 public class ContaBancaria {
 
     private double saldo;
@@ -29,13 +31,13 @@ public class ContaBancaria {
         }
     }
 
-    public void sacar(double valor) {
+    public void sacar(double valor) throws SaldoException {
         if (valor > 0 && valor <= saldo){
             saldo -= valor;
             System.out.println("Saque realidado com sucesso");
         }
         else {
-            System.out.println("Saque invalido");
+            throw new SaldoException("Saldo insuficiente para realizar o saque");
         }
     }
 
