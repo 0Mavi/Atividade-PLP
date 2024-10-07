@@ -17,7 +17,6 @@ class Carro:
     def exibir_velocidade(self):
         print(f"A velocidade atual é {self.velocidade} km/h.")
 
-# Exemplo de uso
 meu_carro = Carro("Toyta", 2015)
 meu_carro.acelerar(50)  
 meu_carro.exibir_velocidade()  
